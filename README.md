@@ -51,3 +51,55 @@ MONGO_URI="mongodb://localhost:27017/mongo"
   "author": "Autor do Post"
 }
 ```
+#### Atualizar Post
+- PUT `/posts/:id`
+
+Body:
+```
+{
+  "title": "Título do Post",
+  "content": "Conteúdo do Post",
+  "author": "Autor do Post"
+}
+```
+#### Deletar Post
+- DELETE `/posts/:id`
+
+### Testes
+Os testes são implementados com Jest e para executar, rode o seguinte comando:
+``npm test``
+Os testes cobrem as principais funcionalidas da API, incluíndo criação, leitura, atualização e remoção de posts.
+
+### Documentação Swagger
+A documentação da API está disponível em Swagger. Após iniciar o servidor, acesse a documentação em:
+``http://localhost:3000/api-docs ``
+Para adicionar a documentação com Swagger, foi utilizado o pacote ``swagger-jsdoc`` e ``swagger-ui-express``. O arquivo de configuração pode ser encontrado em ``swagger.js``.
+
+### Estrutura de Pastas
+```
+├── src
+│   ├── controllers
+│   ├── models
+│   ├── routes
+│   └── tests
+├── .env
+├── .gitignore
+├── Dockerfile
+├── docker-compose.yml
+├── index.js
+├── swagger.js
+├── package.json
+└── README.md
+```
+
+- controllers: contém a lógica dos controladores da API
+- models: define os modelos do MongoDB.
+- routes: define as rotas da API.
+- tests: contém os testes automatizados com Jest.
+
+### Tecnologias Utilizadas
+- Node.js: Plataforma para execução do Javascript no servidor.
+- Express: Framework web para Node.js.
+- MongoDB: Banco de dados NoSQL usado para persistência.
+- Jest: Framework de testes.
+- Swagger: Documentação interativa da API.
