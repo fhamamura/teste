@@ -24,3 +24,30 @@ Esta é uma API de um Blog desenvolvida com Node.js, Express e MongoDB. A API pe
 `npm start`
 
 O servidor irá rodar em `https://localhost:3000`.
+
+### Configuração
+Crie um arquivo `.env` na raiz do projeto com as seguintes variáveis de ambiente:
+```
+PORT=3000
+MONGO_URI="mongodb://localhost:27017/mongo"
+```
+- `PORT` : Define a porta em que o servidor será executado.
+
+- `MONGO_URI` : String de conexão ao MongoDB.
+
+### Endpoints da API
+#### Listar todos os Posts
+- GET `/posts`
+#### Obter um Post por ID
+- GET `/posts/:id`
+#### Criar um Post
+- POST `/posts`
+  
+	Body:
+```
+{
+  "title": "Título do Post",
+  "content": "Conteúdo do Post",
+  "author": "Autor do Post"
+}
+```
